@@ -17,14 +17,14 @@ uss_make_matches <- function(data_engsoc, country) {
     data_engsoc |>
     tibble::as_tibble() |>
     dplyr::transmute(
-      country = as.character(country),
-      tier = as.factor(tier),
-      season = as.integer(Season),
-      date = as.Date(Date),
-      home = as.character(home),
-      visitor = as.character(visitor),
-      goals_home = as.integer(hgoal),
-      goals_visitor = as.integer(vgoal)
+      country = as.character(.env$country),
+      tier = as.factor(.data$tier),
+      season = as.integer(.data$Season),
+      date = as.Date(.data$Date),
+      home = as.character(.data$home),
+      visitor = as.character(.data$visitor),
+      goals_home = as.integer(.data$hgoal),
+      goals_visitor = as.integer(.data$vgoal)
     )
   result
 }
